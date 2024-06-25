@@ -1,5 +1,62 @@
-Steps for using OpenFPGA to generate bitstream for SOFA FPGA fabric 
---------------------------------------------------------------------
+# EF_eFPGA
+
+## Overview
+
+> **This is an embedded FPGA IP in SKY130 technology, in a compact 2475.0um X 2715.0um area.**
+
+## Status
+
+*  Maturity: Silicon Validated
+*  Certification: ((???))
+*  [See below for tapeout/test history](#tapeout-history)
+
+
+## Installation:
+
+You can either clone repo or use [IPM](https://github.com/efabless/IPM "IPM") which is an open-source IPs Package Manager
+
+- To clone repo: `git clone https://github.com/efabless/EF_eFPGA`
+- To download via IPM , follow installation guides [here](https://github.com/efabless/IPM/blob/main/README.md "here") then run `ipm install EF_eFPGA`
+
+For an example on integrating this IP into your project, see the following [Github Repo](https://github.com/efabless/clear).
+
+## Features:
+
+- It consists of 8x8 CLB (Configurable Logic Block) matrix, which makes a total of 64 CLBs
+- Each CLB contains 6 LUTs (LookUp Tables) and 6 FFs (Flip Flops) which makes a total of 384 LUTs and 384 FFs
+- It has 128 FPGA IOs.
+
+## Floorplan
+
+![](./doc/PNG/FPGA88_FLAT_HD_SKY_Render.png)
+
+## Pin Description
+
+|   NAME | TYPE | DIRECTION | DESCRIPTION   |
+| :---: | :---: | :---: | :--- |
+|   ccff_head | CMOS | IN | This input value is the head of the configuration chain, used to configure the FPGA.   |
+|   clk | CMOS | IN | This is the FPGA clock input pin.   |
+|   gfpga_pad_io_soc_in [127:0] | CMOS | IN | 128 FPGA Input pins.   |
+|   isol_n | CMOS | IN | This input value is used to isolate the FPGA IOs while configuring the FPGA.   |
+|   prog_clk | CMOS | IN | This is the programing input clock pin, used while configuring the FPGA.   |
+|   prog_reset | CMOS | IN | This is the enable to get the FPGA in the configuration state.   |
+|   reset | CMOS | IN | This is the enable to get the FPGA in the running state.   |
+|   sc_head | CMOS | IN | This is the scan chain head, used for debugging and testing the FPGA.   |
+|   test_enable | CMOS | IN | This is a test enable input pin, used for debugging and testing the FPGA.   |
+|   ccff_tail | CMOS | OUT | This is an output from the configuration chain, used for debugging and testing the FPGA.   |
+|   gfpga_pad_io_soc_dir [127:0] | CMOS | OUT | Used to determine the direction of the FPGA IO.   |
+|   gfpga_pad_io_soc_out [127:0] | CMOS | OUT | This is the 128 output FPGA pins.    |
+|   sc_tail | CMOS | OUT | This is the output from the scan chain, used for debugging and testing the FPGA.   |
+
+## Tapeout History
+
+|   Shuttle | Date      | Revision | Test results   |
+|----------:|----------:|---------:|----------------|
+| CI2404    | June 2024 | 001      | Blah blah blah |
+
+
+
+## Steps for using OpenFPGA to generate bitstream for SOFA FPGA fabric
 
 1. Clone this repo
    ```
