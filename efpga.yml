@@ -1,0 +1,23 @@
+---
+info:
+  name: EF_eFPGA
+  description: Embedded FPGA
+  repo: https://github.com/efabless/EF_SRAM_1024x32.git
+  owner: Efabless Corp.
+  license: Apache 2.0
+  author: Efabless Corp.
+  email: purchase_ip@efabless.com
+  version: v1.0.0
+  date: 25-06-2024
+  category: digital
+  tags:
+    - FPGA
+  bus:
+    - generic
+  type: hard
+  status: verified
+  width: 2475.0
+  height: 2715.0
+  technology: sky130
+  digital_supply_voltage: 1.8
+  analog_supply_voltage: n/a
