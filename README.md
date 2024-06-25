@@ -52,7 +52,7 @@ For an example on integrating this IP into your project, see the following [Gith
 
 |   Shuttle | Date      | Revision | Test results   |
 |----------:|----------:|---------:|----------------|
-| CI2404    | June 2024 | 001      | Blah blah blah |
+| CI2304    | June 2023 | ???      | It passed all silicon tests on temprature from 0C to 70C |
 
 
 
